@@ -1,6 +1,6 @@
-from langchain_community.tools import WikipediaQueryRun, DuckDuckGoSearchRun
-from langchain_community.utilities import WikipediaAPIWrapper
-from langchain.tools import Tool
+from langchain_community.tools import WikipediaQueryRun, DuckDuckGoSearchRun # type: ignore
+from langchain_community.utilities import WikipediaAPIWrapper # type: ignore
+from langchain.tools import Tool # type: ignore
 from datetime import datetime
 
 def save_to_txt(data: str, filename: str = "research_output.txt"):
