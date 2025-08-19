@@ -23,8 +23,8 @@ prompt = ChatPromptTemplate.from_messages(
         (
             "system",
             """
-            You are a project ideation assistant that helps generate innovative project ideas.
-            Answer the user query creatively and, if useful, use the available tools.
+            You are a research assistant that will help generate a research paper.
+            Answer the user query and use necessary tools. 
             Wrap the output in this format and provide no other text:
             {format_instructions}
             """,
@@ -38,7 +38,7 @@ tools = [search_tool, wiki_tool, save_tool]
 agent = create_tool_calling_agent(llm=llm, prompt=prompt, tools=tools)
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
-query = input("Ask me anything: ")
+query = input("Ask me ")
 raw_response = agent_executor.invoke({"query": query})
 
 try:
